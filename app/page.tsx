@@ -9,7 +9,7 @@ interface Emitter {
   business: string
   tagline: string
   legalName: string
-  dni: string
+  cuit: string
   email: string
   phone: string
 }
@@ -68,8 +68,8 @@ const SEED_DATA: DocData = {
     business: 'FyF Construcciones',
     tagline: 'Construcción · Reformas · Presupuestos',
     legalName: 'Fueyo, Cristian David',
-    dni: '25.215.040',
-    email: 'cdfueyo@live.com.ar',
+    cuit: '20-25215040-5',
+    email: 'cristianfueyo1976@gmail.com',
     phone: '+54 291 405 1282',
   },
   client: { company: '', name: '', email: '' },
@@ -486,7 +486,7 @@ function PdfDocument({ data, services, totals }: { data: DocData; services: Serv
         <div>
           <div className="fyf-section-label">De</div>
           <div className="fyf-party-name">{e.legalName || e.business}</div>
-          {e.dni && <div className="fyf-party-lines">DNI {e.dni}</div>}
+          {e.cuit && <div className="fyf-party-lines">CUIT {e.cuit}</div>}
           <div className="fyf-party-lines">{[e.email, e.phone].filter(Boolean).join('\n')}</div>
         </div>
         <div>
